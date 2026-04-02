@@ -11,8 +11,10 @@ class PredictPipeline:
         pass
     def predict(self,fetaures):
         try:
-            model_path = 'artifacts\model.pkl'
-            preprocessor_path = 'artifacts\preprocessor.pkl'
+            base_path = os.getcwd()
+            
+            model_path = os.path.join(base_path, "artifacts", "model.pkl")
+            preprocessor_path = os.path.join(base_path, "artifacts", "preprocessor.pkl")
 
             model = load_object(file_path=model_path)
             preprocessor = load_object(file_path=preprocessor_path)
